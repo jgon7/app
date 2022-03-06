@@ -3,29 +3,52 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Navbar from "react-bootstrap/Navbar";
+import CartWidget from "../../Widget/CartWidget";
+import Logo from "../Logo/Logo";
+
 
 function NavBar(){
 
     return (
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="lg" style={{ 
+        backgroundColor: "#f4efef"
+   }} >
       <Container>
-      <Navbar.Brand href="#home">Heladerías Siddo</Navbar.Brand>
+      <Navbar.Brand href="#home" ><Logo /></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="#features"></Nav.Link>
-          <Nav.Link href="#pricing">Promociones</Nav.Link>
-          <Nav.Link href="#pricing">Tamaños</Nav.Link>
-          <NavDropdown title="Sabores" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Frutales</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Chocolates</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Cremas</NavDropdown.Item>
+        
+          <NavDropdown title="Maquillaje" id="collasible-nav-dropdown"  style={{ 
+                 fontSize: 18, width: 200}} >
+            <NavDropdown.Item href="#action/3.1" >Labios</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">Ojos</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Rostro</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#action/3.4">Otros</NavDropdown.Item>
+          </NavDropdown>
+   
+          <NavDropdown title="Dermocosmética" id="collasible-nav-dropdown" style={{ 
+                 fontSize: 18, width: 200}}>
+            <NavDropdown.Item href="#action/3.1">Cremas</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">Tratamientos</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Limpieza</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#action/3.4">Otros</NavDropdown.Item>
+          </NavDropdown>
+        
+          <NavDropdown title="Manos" id="collasible-nav-dropdown" style={{ 
+                 fontSize: 18, width: 200}}>
+            <NavDropdown.Item href="#action/3.1">Esmalte</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">Tratamientos</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item href="#action/3.4">Otros</NavDropdown.Item>
           </NavDropdown>
         </Nav>
         <Nav>
-          <Nav.Link href="#deets">Carrito</Nav.Link>
+          <Nav.Link href="#deets" >
+          <CartWidget />
+          </Nav.Link>
           
         </Nav>
       </Navbar.Collapse>
