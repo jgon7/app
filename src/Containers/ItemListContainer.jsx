@@ -1,10 +1,11 @@
 
+import ItemCount from "../Item/ItemCount";
 
-function ItemListContainer({saludo}) {
+
+function ItemListContainer() {
   return (
-    <div> {saludo}
-    </div>
-  );
+<ItemCount stock = '10' initial = '0'/>
+  )
 }
 
 export default ItemListContainer;
