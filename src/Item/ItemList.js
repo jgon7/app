@@ -9,10 +9,10 @@ function ItemList({prods}) {
 
         prods.map((prod)  => 
               
+        <div  key={prod.id} >
         <Item prod= {prod}/>
-
+        </div>
          )
-        
         
           );
         }

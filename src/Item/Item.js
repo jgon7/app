@@ -15,12 +15,10 @@ function Item({prod}) {
               <Card.Body>
                 <Card.Title>{prod.title}</Card.Title>
                 <Card.Img variant="top" src={prod.picture} />
-                
-                <Card.Text>
-                <div>
-                     $U {prod.price}
-                     </div>
-                     <Button variant="dark">Ver Detalle</Button>
+                <br />
+                <Card.Text> <br />
+                <label style={{  width: 50 }}>{prod.price}</label>  <br />
+                     <Button variant="dark">Ver Detalle</Button> <br />
                      </Card.Text>
                     <ItemCount stock = '10' initial = '0'/>
                 

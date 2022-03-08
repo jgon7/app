@@ -14,6 +14,7 @@ function ItemListContainer() {
     .then(resp => setProds(resp))
     .catch(err =>console.log(err))
     .finally(() => setLoading(false))
+    console.log(document.querySelectorAll(" p * div "));
 
   }, [])
 
