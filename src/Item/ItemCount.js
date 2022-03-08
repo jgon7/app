@@ -55,7 +55,6 @@ function ItemCount({ stock, initial}) {
 <Card>
                    
 <Card.Body>
-  <Card.Title>Item</Card.Title>
   <Button variant="light" onClick={handleCount} style={{ 
         width: 40, backgroundColor:  "#f4efef"
    }}>-</Button> 

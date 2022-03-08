@@ -1,11 +1,32 @@
 
-import ItemCount from "../Item/ItemCount";
-
+import { useEffect, useState } from "react";
+import gFetch from "../helpers/getFetch";
+import ItemList from "../Item/ItemList";
 
 function ItemListContainer() {
+
+  const [loading, setLoading] = useState (true);
+  const [prods, setProds] = useState ([]);
+
+
+  useEffect(() => {
+    gFetch
+    .then(resp => setProds(resp))
+    .catch(err =>console.log(err))
+    .finally(() => setLoading(false))
+
+  }, [])
+
+  console.log(prods)
   return (
-<ItemCount stock = '10' initial = '0'/>
+    <>
+       
+       { loading ? <h3>Cargando...</h3> : 
+              <ItemList prods = {prods} />
+        }
+  </>
   )
 }
 
+ 
 export default ItemListContainer;
