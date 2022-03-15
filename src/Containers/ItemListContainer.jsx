@@ -14,7 +14,6 @@ function ItemListContainer() {
     .then(resp => setProds(resp))
     .catch(err =>console.log(err))
     .finally(() => setLoading(false))
-    console.log(document.querySelectorAll(" p * div "));
 
   }, [])
 
@@ -22,7 +21,7 @@ function ItemListContainer() {
   return (
     <>
        
-       { loading ? <h3>Cargando...</h3> : 
+       { loading ? <h3>Cargando Items...</h3> : 
               <ItemList prods = {prods} />
         }
   </>
