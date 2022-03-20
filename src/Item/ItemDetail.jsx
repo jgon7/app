@@ -16,7 +16,7 @@ console.log(prod.picture);
         <div className="card-body">
             <img src={prod.picture} alt='' className='w-50' /><br></br>
            
-            <label style={{  width: 100 }}>US$ {prod.price}</label>
+            <label style={{  width: 100 }}>$U {prod.price}</label>
         </div>
        </div> 
        < ItemCount  stock={10}  initial={0} />

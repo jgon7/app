@@ -17,7 +17,7 @@ function Item({prod}) {
 
             <div className="card-body">
                 <img src={prod.picture} alt='' className='w-50' /><br></br>
-                <label style={{  width: 100 }}> US$ {prod.price}</label>
+                <label style={{  width: 100 }}> $U {prod.price}</label>
            </div>
           </div> 
         </div> 
