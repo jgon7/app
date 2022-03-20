@@ -1,32 +1,27 @@
 
-import { Button } from "react-bootstrap";
-import { Card } from "react-bootstrap";
-import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom"
 
 function Item({prod}) {
 
     return (
    
+      <Link to={`/detalle/${prod.id}`}>
 
-        <div  key={prod.id} >
+        <div className='col-md-4' >
 
-            <Card style={{ width: '18rem', padding: 1 }}>
-             
-              <Card.Body>
-                <Card.Title>{prod.title}</Card.Title>
-                <Card.Img variant="top" src={prod.picture} />
-                <br />
-                <Card.Text> <br />
-                <label style={{  width: 50 }}>{prod.price}</label>  <br />
-                     <Button variant="dark">Ver Detalle</Button> <br />
-                     </Card.Text>
-                    <ItemCount stock = '10' initial = '0'/>
-                
-               
-              </Card.Body>
-            </Card>
-  
+          <div className="card w-70 mt-5" >
+
+            <div className="card-header">
+                {prod.title}
+            </div> 
+
+            <div className="card-body">
+                <img src={prod.picture} alt='' className='w-50' /><br></br>
+                <label style={{  width: 100 }}> US$ {prod.price}</label>
+           </div>
+          </div> 
         </div> 
+      </Link>
 
         
           );

@@ -6,7 +6,6 @@ import { Card } from "react-bootstrap";
 function ItemCount({ stock, initial}) {
 
   let inicial = parseInt(initial);
-
   if (inicial > parseInt(stock)) {
     inicial = parseInt(stock);
   }
@@ -14,17 +13,17 @@ function ItemCount({ stock, initial}) {
   const [count, setCount] = useState (inicial);
 
   const handleCountPlas = () => {
-    if (count < parseInt(stock))  {
+    if (parseInt(count) < parseInt(stock))  {
         if (parseInt(stock) !== 0) {
-            setCount (count + 1)
+            setCount (parseInt(count) + 1)
         }
     } 
  }
 
    const handleCount = () => { 
-    if (count > inicial) {
+    if (parseInt(count) > inicial) {
         
-        setCount (count - 1)
+        setCount (parseInt(count) - 1)
         
     }
  }
@@ -33,12 +32,12 @@ function ItemCount({ stock, initial}) {
     
     if (parseInt(stock) !== 0) {
 
-        if (count === 0) {
+        if (parseInt(count) === 0) {
             console.log("No se agregó item por ingresar cantidad 0") 
         } else {
 
-       if (count <= parseInt(stock)){
-        console.log("Cantidad de Items elegidos : " + count)
+       if (parseInt(count) <= parseInt(stock)){
+        console.log("Cantidad de Items elegidos : " + parseInt(count))
         } }
          
     } else {
@@ -48,7 +47,7 @@ function ItemCount({ stock, initial}) {
   
     
  }
-
+ console.log(count);   
   return (
    
 

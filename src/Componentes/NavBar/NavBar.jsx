@@ -5,6 +5,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Navbar from "react-bootstrap/Navbar";
 import CartWidget from "../../Widget/CartWidget";
 import Logo from "../Logo/Logo";
+import { NavLink, Link } from 'react-router-dom';
 
 
 function NavBar(){
@@ -14,41 +15,41 @@ function NavBar(){
         backgroundColor: "#f4efef"
    }} >
       <Container>
-      <Navbar.Brand href="#home" ><Logo /></Navbar.Brand>
+      
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
+
+        
+       <Link to='/'> <li className="nav-item"> <Logo /></li></Link>
         
           <NavDropdown title="Maquillaje" id="collasible-nav-dropdown"  style={{ 
                  fontSize: 18, width: 200}} >
-            <NavDropdown.Item href="#action/3.1" >Labios</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Ojos</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Rostro</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Otros</NavDropdown.Item>
+            <NavLink to="categoria/labios"><li className="nav-item">Labios </li></NavLink>
+            <NavLink to="categoria/ojos"><li className="nav-item">Ojos</li> </NavLink>
+            <NavLink to="categoria/rostro"><li className="nav-item">Rostro</li></NavLink>
+      
           </NavDropdown>
    
           <NavDropdown title="Dermocosmética" id="collasible-nav-dropdown" style={{ 
                  fontSize: 18, width: 200}}>
-            <NavDropdown.Item href="#action/3.1">Cremas</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Tratamientos</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Limpieza</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Otros</NavDropdown.Item>
+           <NavLink to="categoria/cremas"><li className="nav-item">Cremas</li></NavLink>
+            <NavLink to="categoria/tratamientos"><li className="nav-item">Tratamientos</li></NavLink>
+            <NavLink to="categoria/limpieza"><li className="nav-item">Limpieza</li></NavLink>
+        
           </NavDropdown>
         
           <NavDropdown title="Manos" id="collasible-nav-dropdown" style={{ 
                  fontSize: 18, width: 200}}>
-            <NavDropdown.Item href="#action/3.1">Esmalte</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Tratamientos</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Otros</NavDropdown.Item>
+           <NavLink to="categoria/esmalte"><li className="nav-item">Esmalte</li></NavLink>
+            <NavLink to="categoria/tratamientosesm"><li className="nav-item">Tratamientos</li></NavLink>
+          
           </NavDropdown>
         </Nav>
         <Nav>
-          <Nav.Link href="#deets" >
+          <Link to="cart">
           <CartWidget />
-          </Nav.Link>
+          </Link>
           
         </Nav>
       </Navbar.Collapse>
