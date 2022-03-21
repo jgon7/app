@@ -1,6 +1,8 @@
 import ItemCount from "../Item/ItemCount";
 
 function ItemDetail({prod}) {
+
+    
 console.log(prod.picture);
     return (
    
@@ -14,8 +16,8 @@ console.log(prod.picture);
         </div> 
 
         <div className="card-body">
+            <label >Categoría: {prod.categoria}</label><br></br>
             <img src={prod.picture} alt='' className='w-50' /><br></br>
-           
             <label style={{  width: 100 }}>$U {prod.price}</label>
         </div>
        </div> 
