@@ -1,9 +1,34 @@
+import { useState } from "react";
+import { useCartContext } from "../Context/CartContext";
 import ItemCount from "../Item/ItemCount";
 
 function ItemDetail({prod}) {
 
+    const [canti, setCanti] = useState (0);
+    const {addToCart, cartList} = useCartContext();
+  
+   
+    const arraycon = cartList.filter(item=> item.id === prod.id);
     
-console.log(prod.picture);
+    const onAdd = (cant) => {
+        
+
+            if (arraycon.length  === 1) {
+                setCanti (parseInt(cant) + parseInt(arraycon[0].cantidad)) ;
+                console.log(parseInt(cant) + parseInt(arraycon[0].cantidad))
+                console.log("CANT");
+                console.log(cant);
+                console.log("arraycon.cantidad");
+                console.log(arraycon[0].cantidad);
+                console.log("canti");
+                console.log(canti);
+                addToCart( { ...prod, cantidad:  canti} )
+            }else{
+                addToCart( { ...prod, cantidad: cant} )
+          }       
+    }
+  
+
     return (
    
 
@@ -21,7 +46,7 @@ console.log(prod.picture);
             <label style={{  width: 100 }}>$U {prod.price}</label>
         </div>
        </div> 
-       < ItemCount  stock={10}  initial={0} />
+       < ItemCount  stock={10}  initial={0} onAdd={onAdd} />
       </div> 
     
           );

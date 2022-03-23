@@ -4,7 +4,9 @@ import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 
-function ItemCount({ stock, initial}) {
+function ItemCount({ stock, initial, onAdd}) {
+
+  
 
   let inicial = parseInt(initial);
   if (inicial > parseInt(stock)) {
@@ -42,6 +44,7 @@ function ItemCount({ stock, initial}) {
         console.log("Cantidad de Items elegidos : " + parseInt(count))
         } 
         setInputType('input')
+        onAdd( count )
       }
          
     } else {
