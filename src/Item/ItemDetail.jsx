@@ -1,10 +1,10 @@
-import { useState } from "react";
+
 import { useCartContext } from "../Context/CartContext";
 import ItemCount from "../Item/ItemCount";
 
 function ItemDetail({prod}) {
 
-    const [canti, setCanti] = useState (0);
+    
     const {addToCart, cartList} = useCartContext();
   
    
@@ -14,15 +14,7 @@ function ItemDetail({prod}) {
         
 
             if (arraycon.length  === 1) {
-                setCanti (parseInt(cant) + parseInt(arraycon[0].cantidad)) ;
-                console.log(parseInt(cant) + parseInt(arraycon[0].cantidad))
-                console.log("CANT");
-                console.log(cant);
-                console.log("arraycon.cantidad");
-                console.log(arraycon[0].cantidad);
-                console.log("canti");
-                console.log(canti);
-                addToCart( { ...prod, cantidad:  canti} )
+                addToCart( { ...prod, cantidad:  parseInt(cant) + parseInt(arraycon[0].cantidad)} )
             }else{
                 addToCart( { ...prod, cantidad: cant} )
           }       
