@@ -7,9 +7,10 @@ export const useCartContext =  () => useContext(CartContext)
 function CartContextProvider({children}) {
 
     const [cartList, setCartList ] = useState([]);
+    const [cartList2, setCartList2 ] = useState([]);
 
     const addToCart = (item) => {
-        
+
         const arraysin = cartList.filter(i=> i.id !== item.id);
         const arraycon = cartList.filter(i=> i.id === item.id);
 
@@ -22,12 +23,22 @@ function CartContextProvider({children}) {
         
     }
 
+    const eliminarItem = (id) => {
+        const array3 = cartList.filter(i=> i.id !== id );
+        setCartList( [...array3])
+
+        const array4 = cartList2.filter(i=> i.id !== id );
+        setCartList2( [...array4])
+    }
+
+
     const vaciarCart = () => {
         setCartList( [])
+        setCartList2( [])
     }
 
     return (
-        <CartContext.Provider value={{cartList, addToCart, vaciarCart}}>
+        <CartContext.Provider value={{cartList, cartList2, addToCart, vaciarCart, eliminarItem }}>
 
         {children}
 

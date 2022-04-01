@@ -12,12 +12,12 @@ function ItemDetail({prod}) {
     
     const onAdd = (cant) => {
         
-
             if (arraycon.length  === 1) {
                 addToCart( { ...prod, cantidad:  parseInt(cant) + parseInt(arraycon[0].cantidad)} )
+
             }else{
                 addToCart( { ...prod, cantidad: cant} )
-          }       
+          }     
     }
   
 

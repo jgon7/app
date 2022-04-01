@@ -29,7 +29,6 @@ function ItemListContainer() {
 
   }, [id])
 
-  console.log(id)
   return (
     <>
        
