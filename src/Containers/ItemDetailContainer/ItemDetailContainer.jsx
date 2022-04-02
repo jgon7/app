@@ -1,8 +1,9 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import gFetch from "../../helpers/getFetch";
 import ItemDetail from "../../Item/ItemDetail";
+
+import { getDoc, getFirestore, doc } from "firebase/firestore";
 
 
 
@@ -13,15 +14,19 @@ function ItemDetailContainer() {
 
     const { detalleId } = useParams()
 
+
+    
   useEffect(() => {
 
-          gFetch
-          .then(resp => resp.find(item=> item.id === detalleId))
-          .then(resp => setProd(resp))
-          .catch(err =>console.log(err))
-          .finally(() => setLoading(false))
-  
-    }, [])
+    const db = getFirestore()
+    const queryDoc = doc(db, 'items', detalleId)
+    getDoc(queryDoc)
+    .then(resp =>setProd({id: resp.id, ...resp.data()}))
+    .catch(err =>console.log(err))
+    .finally(() => setLoading(false))
+   }, [detalleId])
+ 
+
 return (
     <>
     
