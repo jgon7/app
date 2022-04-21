@@ -14,7 +14,7 @@ function ItemDetailContainer() {
     const [prod, setProd] = useState ({});
     const { detalleId } = useParams()
 
-
+ 
     const Return= ()=> {
 
       return (
