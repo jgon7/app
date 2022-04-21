@@ -37,18 +37,18 @@ function ItemCount({ stock, initial, onAdd}) {
     if (parseInt(stock) !== 0) {
 
         if (parseInt(count) === 0) {
-            console.log("No se agregó item por ingresar cantidad 0") 
+           alert("No se agregó item por ingresar cantidad 0") 
         } else {
 
        if (parseInt(count) <= parseInt(stock)){
-        console.log("Cantidad de Items elegidos : " + parseInt(count))
+        alert("Cantidad de Items elegidos : " + parseInt(count))
         } 
         setInputType('input')
         onAdd( count )
       }
          
     } else {
-        console.log("No hay Stock de este Item")        
+        alert("No hay Stock de este Item")        
     }
    
   

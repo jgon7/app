@@ -32,7 +32,7 @@ function Checkout() {
             
             return {id, nombre, precio}   
         })
-        console.log(orden)
+     
     
         const db = getFirestore()
         const queryCollectionSet = collection(db, 'orders')
@@ -118,7 +118,7 @@ function Checkout() {
         )
       }
 
-      const Volver= ()=> {
+      const Return= ()=> {
 
         return (
             <>
@@ -145,7 +145,7 @@ function Checkout() {
         id == null ? 
         <Out />
         :
-        <Volver />
+        <Return />
         
           );
         }
