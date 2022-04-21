@@ -61,7 +61,7 @@ function ItemCount({ stock, initial, onAdd}) {
     <Card>      
       <Card.Body>
         <Link to='/cart' >
-          <button className="btn btn-outline-primary" onClick={()=>console.log('ir a cart') } >Ir al Carrito</button>
+        <Button variant="light" style={{ backgroundColor: "#F7B1BD"}} >Ir al Carrito</Button>
         </Link>
       </Card.Body>
     </Card>
@@ -81,8 +81,7 @@ const ButtonCount= ()=> {
                       }}>-</Button> 
                      <label style={{  width: 50 }}>{count}</label> 
                      <Button variant="light" onClick={handleCountPlas} style={{  width: 40, backgroundColor:  "#f4efef"}}>+</Button> <br /> <br />
-                     <Button variant="light" style={{ backgroundColor: "#f4efef"
-                      }} onClick={handleCountFinal}>Agregar al Carrito</Button>
+                     <Button variant="light" onClick={handleCountFinal} style={{ backgroundColor: "#f4efef"}} >Agregar al Carrito</Button>
                     
                    
                    </Card.Body>

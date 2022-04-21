@@ -3,6 +3,7 @@ import { addDoc, collection,getFirestore } from 'firebase/firestore'
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../Context/CartContext"
 import { useState } from "react";
+import { Button, Col, Form, Row } from 'react-bootstrap';
 
 function Checkout() {
     const [dataForm, setDataForm] = useState({name: '', phone: '',email: '',  email2: ''})
@@ -54,64 +55,86 @@ function Checkout() {
     const Out= ()=> {
 
         return (
+
+            <div style={{ borderColor: "#f4efef", padding: 70, marginLeft: 300 }}> 
         
-            <> 
-            <form 
-                onSubmit={generarOrden}                 
-            >
-                <input 
-                    required
-                    type='text' 
-                    name='name' 
-                    placeholder='Nombre Completo' 
+            <Form onSubmit={generarOrden} >
+            <Form.Group as={Row} className="mb-3">
+              <Form.Label column sm={2} >
+                Nombre Completo
+              </Form.Label>
+              <Col sm={4}>
+                <Form.Control type="text"  name='name' 
                     value={dataForm.name}
-                    onChange={handleChange}
-                /><br />
-                <input 
-                    required
-                    type='text' 
+                    onChange={handleChange} />
+              </Col>
+            </Form.Group>
+          
+            <Form.Group as={Row} className="mb-3">
+              <Form.Label column sm={2} >
+                Telefono
+              </Form.Label>
+              <Col sm={2}>
+                <Form.Control type='text' 
                     name='phone'
-                    placeholder='Telefono' 
                     value={dataForm.phone}
-                    onChange={handleChange}
-                /><br/>
-                <input 
-                     required
-                    type='email' 
+                    onChange={handleChange} />
+              </Col>
+            </Form.Group>
+
+            <Form.Group as={Row} className="mb-3">
+              <Form.Label column sm={2}>
+                Email
+              </Form.Label>
+              <Col sm={4}>
+                <Form.Control type='email' 
                     name='email'
-                    placeholder='Email' 
                     value={dataForm.email}
-                    onChange={handleChange}
-                /><br/>
-                 <input 
-                    required
-                    type='email' 
+                    onChange={handleChange} />
+              </Col>
+            </Form.Group>
+
+
+            <Form.Group as={Row} className="mb-3">
+              <Form.Label column sm={2}>
+                Confirmar Email
+              </Form.Label>
+              <Col sm={4}>
+                <Form.Control type='email' 
                     name='email2'
-                    placeholder='Confirmar email' 
                     value={dataForm.email2}
-                    onChange={handleChange}
-                /><br/>
-                <button>Finalizar Compra</button>
-            </form>
-              
-            </>
-             
+                    onChange={handleChange} />
+              </Col>
+            </Form.Group>
+            
+            <Form.Group as={Row} className="mb-3">
+                <Col sm={{ span: 3, offset: 2 }}>
+                    <Button type= "Submit"variant="light" style={{  backgroundColor: "#f4efef", borderColor: "#f4efef" }}>Finalizar Compra</Button>
+                </Col>
+            </Form.Group>
+
+            </Form>
+            </div>
         )
       }
 
       const Volver= ()=> {
 
         return (
-        
-            <div>
-                <h2> ¡Gracias por su compra! </h2>
-                    {id && <label className={'alert alert-success'} >El id de su compra es: {id}</label>}
-                    
-            <Link to='/'>
-               <button className="btn btn-outline-primary" onClick={vaciarCart}>Continuar</button>
-            </Link>
+            <>
+            <div style={{ marginTop: 50, padding: 20}}>
+                <h3> ¡Gracias por su compra! </h3>
+                    {id && <label className={'alert alert-success'} style={{  backgroundColor: "#F7B1BD" }} >El id de su compra es: {id}</label>}
 
-            </div>
+            </div>  
+            <div>     
+            <Link to='/'>
+            <Button variant="light" style={{  backgroundColor: "#f4efef", borderColor: "#f4efef" }} onClick={vaciarCart}>Continuar</Button>
+              
+            </Link>
+            </div> 
+            </>
+            
              
         )
       }

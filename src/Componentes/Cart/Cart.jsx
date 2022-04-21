@@ -1,5 +1,5 @@
 
-import { Table } from "react-bootstrap"
+import { Button, Table } from "react-bootstrap"
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../Context/CartContext"
 
@@ -18,10 +18,14 @@ function Cart() {
     return (
     
         <>
-            <h2> No hay Productos agregados al Carrito </h2>
+          <div style={{ marginTop: 50, padding: 20}}>
+            <h3> No hay Productos agregados al Carrito </h3>
+          </div>
+          <div>
             <Link to='/'>
-               <button className="btn btn-outline-primary" onClick={() => console.log('seguir comprando')}>Seguir Comprando</button>
+            <Button variant="light" style={{  backgroundColor: "#f4efef", borderColor: "#f4efef" }}>Seguir Comprando</Button>
             </Link>
+          </div>
         </>
          
     )
@@ -55,18 +59,22 @@ function Cart() {
             <td>{prod.price}</td>
             <td>{prod.cantidad}</td>
             <td>{parseInt(prod.cantidad) * parseInt(prod.price)}</td>
-           
-            <td><button className="btn btn-outline-primary" onClick={() => eliminarItem(prod.id)}>Eliminar Item</button></td>
+            
+            <td><Button variant="light" style={{  backgroundColor: "#F7B1BD", borderColor: "#F7B1BD" }} onClick={() => eliminarItem(prod.id)}>Eliminar Item</Button></td>
           </tr>
         </tbody>
         )}
       </Table>
+      <div>
+        <label style={{ width: 250, fontSize: 21, fontWeight: "bold" }}> Precio Total: U$ {precioTotal()} </label>
+      </div>
+     
+      <Button variant="light" style={{  backgroundColor: "#E6C8A2", borderColor: "#F7B1BD", margin: 30 }} onClick={vaciarCart}>Vaciar Carrito</Button>
       
-      <label style={{ width: 80 }}> Precio Total: {precioTotal()} </label>
-      <button className="btn btn-outline-primary" onClick={vaciarCart}>Vaciar Carrito</button>
-      <Link to='/checkout'>
-      <button className="btn btn-outline-secondary">Confirmar Compra</button>
-      </Link>
+       <Link to='/checkout'>
+       <Button variant="light" style={{  backgroundColor: "#CF775D", borderColor: "#F7B1BD" }}>Confirmar Compra</Button>
+       </Link>
+      
     </div>
          
     ) 
