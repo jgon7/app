@@ -7,6 +7,7 @@ import ItemListContainer from './Containers/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './Containers/ItemDetailContainer/ItemDetailContainer';
 import Cart from './Componentes/Cart/Cart';
 import CartContextProvider from './Context/CartContext';
+import Checkout from './Componentes/Checkout/Checkout';
 
 
 function App() { 
@@ -23,7 +24,7 @@ function App() {
         <Route
             path = "/detalle/:detalleId" element = { <ItemDetailContainer /> }  
         />
-
+        
         <Route 
             path="/categoria/:id" element={ <ItemListContainer /> } 
         />
@@ -34,6 +35,10 @@ function App() {
         
         <Route
             path = "/*" element = { <Navigate to = '/' /> }  
+        />
+
+        <Route
+            path = "/checkout" element = { <Checkout /> }  
         />
 
       </Routes>

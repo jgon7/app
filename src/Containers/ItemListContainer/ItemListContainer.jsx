@@ -47,7 +47,8 @@ function ItemListContainer() {
   return (
     <>
        
-       { loading ? <h3>Cargando ...</h3> : 
+       { 
+       loading ? <h3>Cargando ...</h3> : 
               <ItemList prods = {prods} />
         }
 

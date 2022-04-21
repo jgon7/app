@@ -24,6 +24,7 @@ function ItemDetail({prod}) {
     return (
    
 
+    
       <div className='col-md-4' >
 
        <div className="card w-70 mt-5" >

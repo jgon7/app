@@ -17,19 +17,20 @@ function ItemDetailContainer() {
 
     
   useEffect(() => {
-
+    
     const db = getFirestore()
     const queryDoc = doc(db, 'items', detalleId)
     getDoc(queryDoc)
     .then(resp =>setProd({id: resp.id, ...resp.data()}))
     .catch(err =>console.log(err))
     .finally(() => setLoading(false))
-   }, [detalleId])
- 
+  }, [detalleId])
+
+
+  
 
 return (
     <>
-    
     { loading ? <h4>Cargando ItemDetail...</h4> : 
            <ItemDetail prod = {prod} />
            
