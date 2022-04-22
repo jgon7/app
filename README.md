@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# E-commerce "Infinito Cosmetics"
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Introducción
+Infinito Cosmetics es una aplicación creada con fines prácticos y de aprendizaje de la tecnología React que surge como consecuencia del Proyecto Final del curso de dicha tecnología dictado por CoderHouse.
 
-## Available Scripts
+### Funcionalidades 
 
-In the project directory, you can run:
+- Acceso a las distintas categorías de la app, pudiendo así ver todos sus productos.  
+- Visibilidad de cada producto con su respectivo detalle que incluye: nombre, precio, categoria a la que pertenece y una imagen ilustrativa.
+- Añadir al "Carrito de Compras" cualquiera de los productos disponibles, en las cantidades que se desee, desde el detalle de cada producto. 
+- Vista del "Carrito de Compras" (siempre que haya productos en el) que incluye un listado de todos los productos de la orden con su precio total.
+- Para confirmar la compra se solicitará datos al cliente como nombre completo, telefono e e-mail. 
+- Al confirmar la compra se guardará la misma en la base de datos de Firebase con todos los productos además de la fecha de la misma, devolviéndole al usuario el identificador de su orden. 
 
-### `npm start`
+### Componentes empleados
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- NavBar: menú desplegable con las categorías y acceso al "Carrito de Compras" si existen productos agregados en el. 
+- Logo: Logo de la app.
+- CartWidget: Icono representativo del "Carrito de compras".
+- Cart: Manejo del "Carrito de Compras".
+- ItemList: Lista de Productos que se muestran tanto en el home como a partir de alguna categoria elegida del menú.
+- ItemDetail: Producto individual con detalle
+- ItemCount: Contador de cantidades que aparece en cada producto
+- Item: Producto individual sin detalle
+- Checkout: Formulario a llenar por el usuario para terminar su compra.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+### Librerías utilizadas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React-Router-Dom: permite la navegabilidad entre los distintos componentes haciendo un enrutamiento dinámico, es decir, que termina renderizando los mismos.
+- Firebase: reemplaza nuestro "Backend", ya que es escapa del contenido del curso. Esta libreria nos permitirá tener una base de datos en la nube que simplifica la programación de la app.
+- React-icons: utilizado para tomar iconos para la app, en este caso, el ícono del "Carrito de compras".
+- boostrap-react: permite poder tener componentes con los estilos de Bootstrap pero basados en React.
 
-### `npm run build`
+### Tecnologías
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React version 17.0.2
+- NodeJS version 16.14.2
+- Javascript
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Versionado
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para manejar las versiones de la aplicación se utilizó GitHub, creando alli un repositorio. Este software posee un sistema de control de versiones Git.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Deploy
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+La aplicación está deployada mediante Netlify. La misma está conectada con el repositorio de GitHub y configurada para que siempre que hayan cambios en el repositorio, se realize automaticamente un nuevo build para deployar.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Instalación del entorno necesario
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+- Node.JS: De la pagina web de Node (https://nodejs.org/es/), descargamos el instalador. Luego, corremos el mismo hasta el final. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- React: En la consola de Visual Studio Code (o del editor de codigo que se prefiera) usamos la siguiente linea de codigo para instalar la tecnología 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```sh
+npm install -g create-react-app
+```
